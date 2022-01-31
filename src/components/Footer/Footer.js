@@ -1,71 +1,68 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Row,
-  Column,
-  FooterLink,
-  Heading,
-} from "./FooterStyles";
-  
+import "./Footer.css";
+
 const Footer = () => {
   return (
-    <Box>
-      <Container>
-        <Row>
-          <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Services</Heading>
-            <FooterLink href="#">Your account</FooterLink>
-            <FooterLink href="#">Add new recipie</FooterLink>
-            <FooterLink href="#">Find more</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Contact Us</Heading>
-            <FooterLink href="#">Warsaw</FooterLink>
-            <FooterLink href="#">London</FooterLink>
-            <FooterLink href="#">Berlin</FooterLink>
-            <FooterLink href="#">New York</FooterLink>
-          </Column>
-          <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-              </i>
-            </FooterLink>
-          </Column>
-        </Row>
-      </Container>
-    </Box>
+    <div className="box">
+      <div className="container">
+        <div className="row">
+          <div className="column">
+            <p className="heading">About Us</p>
+            <a className="footer-link" href="#">
+              Aim
+            </a>
+            <a className="footer-link" href="#">
+              Vision
+            </a>
+            <a className="footer-link" href="#">
+              Testimonials
+            </a>
+          </div>
+          <div className="column">
+            <p className="heading">Services</p>
+            <a className="footer-link" href="#">
+              Your account
+            </a>
+            <a className="footer-link" href="#">
+              Add new recipie
+            </a>
+            <a className="footer-link" href="#">
+              Find more
+            </a>
+          </div>
+          <div className="column">
+            <p className="heading">Contact Us</p>
+            <a className="footer-link" href="#">
+              Warsaw
+            </a>
+            <a className="footer-link" href="#">
+              London
+            </a>
+            <a className="footer-link" href="#">
+              Berlin
+            </a>
+            <a className="footer-link" href="#">
+              New York
+            </a>
+          </div>
+          <div className="column">
+            <p className="heading">Social Media</p>
+            <a className="footer-link" href="#">
+              <span style={{ marginLeft: "10px" }}>Facebook</span>
+            </a>
+            <a className="footer-link" href="#">
+              <span style={{ marginLeft: "10px" }}>Instagram</span>
+            </a>
+            <a className="footer-link" href="#">
+              <span style={{ marginLeft: "10px" }}>Twitter</span>
+            </a>
+            <a className="footer-link" href="#">
+              <span style={{ marginLeft: "10px" }}>Youtube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 export default Footer;
