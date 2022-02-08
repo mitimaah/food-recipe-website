@@ -10,7 +10,6 @@ function App() {
       <Navbar />
       <Slider />
       <Footer />
-
     </div>
   );
 }
