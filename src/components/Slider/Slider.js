@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Slider.css";
 import BtnSlider from "./BtnSlider";
 import dataSlider from "./dataSlider";
+import SliderImage from "./SliderImage";
 
 export default function Slider() {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -30,12 +31,11 @@ export default function Slider() {
     <div className="container-slider">
       {dataSlider.map((obj, index) => {
         return (
-          <div
-            key={obj.id}
-            className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
-          >
-            <img src={obj.image} alt={obj.title} />
-          </div>
+          <SliderImage
+            slideIndex={slideIndex}
+            obj={obj}
+            index={index}
+          ></SliderImage>
         );
       })}
       <BtnSlider moveSlide={handleNextSlide} direction={"next"} />
@@ -44,6 +44,7 @@ export default function Slider() {
       <div className="container-dots">
         {dataSlider.map((item, index) => (
           <div
+            key={index}
             onClick={() => handleChangeDot(index + 1)}
             className={slideIndex === index + 1 ? "dot active" : "dot"}
           ></div>
