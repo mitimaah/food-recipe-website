@@ -17,7 +17,6 @@ function RecipeApi() {
     const response = await Axios.get(
       `https://api.edamam.com/search?q=${searchString}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-    console.log(response.data.hits);
     updateRecipeList(response.data.hits);
   };
 
@@ -57,12 +56,14 @@ function RecipeApi() {
                         <th>Weight</th>
                       </thead>
                       <tbody>
-                        {recipeList.map((recipeObj2, index) => (
-                          <tr key={index} className="ingredient-list">
-                            <td>{recipeObj2.recipe.text}</td>
-                            <td>{recipeObj2.recipe.weight}</td>
-                          </tr>
-                        ))}
+                        {recipeObj.recipe.ingredients.map(
+                          (ingredient, index) => (
+                            <tr key={index} className="ingredient-list">
+                              <td>{ingredient.text}</td>
+                              <td>{ingredient.weight}</td>
+                            </tr>
+                          )
+                        )}
                       </tbody>
                     </table>
                   </DialogContent>
