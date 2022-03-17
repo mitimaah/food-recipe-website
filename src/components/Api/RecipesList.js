@@ -4,18 +4,16 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
-import "./RecipeApi.css";
+import "./RecipesList.css";
+import SearchInput from "./SearchInput";
 
-const APP_ID = "8f8d0bea";
-const APP_KEY = "ddd004d50edd6831b8667fd05471ccc9";
-
-function RecipeApi() {
+function RecipesList() {
   const [timeoutId, updateTimeoutId] = useState();
   const [recipeList, updateRecipeList] = useState([]);
 
   const fetchRecipe = async (searchString) => {
     const response = await Axios.get(
-      `https://api.edamam.com/search?q=${searchString}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=${searchString}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}`
     );
     updateRecipeList(response.data.hits);
   };
@@ -31,14 +29,7 @@ function RecipeApi() {
 
   return (
     <div>
-      <div className="search">
-        <img className="search-icon" src="/search-icon.svg" alt=" " />
-        <input
-          className="search-input"
-          placeholder="Search Recipe"
-          onChange={onTextChange}
-        />
-      </div>
+      <SearchInput valueChange={onTextChange} />
       <div>
         <div className="recipe-list-container">
           {recipeList?.length &&
@@ -52,8 +43,10 @@ function RecipeApi() {
                     </span>
                     <table>
                       <thead>
-                        <th>Ingredient</th>
-                        <th>Weight</th>
+                        <tr>
+                          <th>Ingredient</th>
+                          <th>Weight</th>
+                        </tr>
                       </thead>
                       <tbody>
                         {recipeObj.recipe.ingredients.map(
@@ -105,4 +98,4 @@ function RecipeApi() {
   );
 }
 
-export default RecipeApi;
+export default RecipesList;

@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 import Slider from "./components/Slider/Slider";
-import RecipeApi from "./components/Api/RecipeApi";
+import RecipesList from "./components/Api/RecipesList";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Slider />
-      <RecipeApi />
+      <RecipesList />
       <Footer />
     </div>
   );
